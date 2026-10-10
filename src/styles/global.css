@@ -1,0 +1,54 @@
+/*
+ * Thứ tự lớp: style của antd nằm giữa, để class tiện ích của Tailwind luôn đè được lên component antd.
+ * Không dùng preflight của Tailwind vì nó xoá kiểu mặc định của nút, bảng... mà antd dựa vào.
+ */
+@layer theme, base, antd, components, utilities;
+
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@theme {
+  --color-app: #0f1115;
+  --color-panel: #171a21;
+  --color-panel-2: #1f232c;
+  --color-line: #2a2f3a;
+  --color-muted: #8b93a3;
+  --color-accent: #3b82f6;
+}
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    overflow: hidden;
+    background: var(--color-app);
+    color: #e6e8ec;
+    color-scheme: dark;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+  }
+
+  img,
+  video {
+    display: block;
+  }
+}
